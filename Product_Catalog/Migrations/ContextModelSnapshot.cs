@@ -235,6 +235,23 @@ namespace Product_Catalog.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Phones"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Cars"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "laptops"
+                        });
                 });
 
             modelBuilder.Entity("Product_Catalog.Models.Product", b =>
@@ -245,7 +262,7 @@ namespace Product_Catalog.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("CategoryId")
+                    b.Property<int?>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreationDate")
@@ -265,7 +282,6 @@ namespace Product_Catalog.Migrations
                         .HasColumnType("float");
 
                     b.Property<string>("UserId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
@@ -332,15 +348,11 @@ namespace Product_Catalog.Migrations
                 {
                     b.HasOne("Product_Catalog.Models.Category", "Category")
                         .WithMany("Products")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CategoryId");
 
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
                         .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
 
                     b.Navigation("Category");
 

@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\Product_Catalog.bundle.scp.css"
     },
     {
+      "Id": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\TaskXceedProductCatalog\\Product_Catalog\\wwwroot\\Images\\30f41773-78f3-4fb2-a49f-552b6f5e8990_Capture2.PNG",
+      "PackagePath": "staticwebassets\\Images\\30f41773-78f3-4fb2-a49f-552b6f5e8990_Capture2.PNG"
+    },
+    {
+      "Id": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\TaskXceedProductCatalog\\Product_Catalog\\wwwroot\\Images\\be49f20d-0204-4a25-b711-a3ffd83cfb47_Capture.PNG",
+      "PackagePath": "staticwebassets\\Images\\be49f20d-0204-4a25-b711-a3ffd83cfb47_Capture.PNG"
+    },
+    {
       "Id": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\TaskXceedProductCatalog\\Product_Catalog\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

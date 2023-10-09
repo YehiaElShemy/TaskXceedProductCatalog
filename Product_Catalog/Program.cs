@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Product_Catalog.Models.Context;
+using Product_Catalog.Repository;
 
 namespace Product_Catalog
 {
@@ -13,7 +14,8 @@ namespace Product_Catalog
             builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<Context>(option =>
                 option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
+            builder.Services.AddScoped<IRepository,ProductRepository>();
+            builder.Services.AddScoped<IProduct,ProductRepository>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

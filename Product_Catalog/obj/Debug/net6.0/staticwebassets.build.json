@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cII8cfb5hxruYtOYBbdL/paUeFeAO2i4ppQb6nrx5n8=",
+  "Hash": "FhWVe1xNT6M27fQscCiqxcI0jNF6HklzZnJuDtEXxT4=",
   "Source": "Product_Catalog",
   "BasePath": "_content/Product_Catalog",
   "Mode": "Default",
@@ -83,6 +83,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\TaskXceedProductCatalog\\Product_Catalog\\wwwroot\\Images\\30f41773-78f3-4fb2-a49f-552b6f5e8990_Capture2.PNG",
+      "SourceId": "Product_Catalog",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\TaskXceedProductCatalog\\Product_Catalog\\wwwroot\\",
+      "BasePath": "_content/Product_Catalog",
+      "RelativePath": "Images/30f41773-78f3-4fb2-a49f-552b6f5e8990_Capture2.PNG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\30f41773-78f3-4fb2-a49f-552b6f5e8990_Capture2.PNG"
+    },
+    {
+      "Identity": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\TaskXceedProductCatalog\\Product_Catalog\\wwwroot\\Images\\be49f20d-0204-4a25-b711-a3ffd83cfb47_Capture.PNG",
+      "SourceId": "Product_Catalog",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\TaskXceedProductCatalog\\Product_Catalog\\wwwroot\\",
+      "BasePath": "_content/Product_Catalog",
+      "RelativePath": "Images/be49f20d-0204-4a25-b711-a3ffd83cfb47_Capture.PNG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\be49f20d-0204-4a25-b711-a3ffd83cfb47_Capture.PNG"
     },
     {
       "Identity": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\TaskXceedProductCatalog\\Product_Catalog\\wwwroot\\js\\site.js",
