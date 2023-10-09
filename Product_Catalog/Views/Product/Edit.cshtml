@@ -1,0 +1,18 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Edit";
+    ViewBag.link = "Edit";
+}
+
+<h1>Edit</h1>
+<partial name="_CreateAndEditPartialView" model="Model" />
+<div>
+    <a asp-action="Index" asp-controller="Product">Go To All Product</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

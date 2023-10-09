@@ -1,0 +1,102 @@
+﻿@model Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+
+    <div class="container mt-5 p-3 rounded cart">
+        <div class="right-side-pro-detail border p-3 m-0">
+            <div class="row">
+                <div class="col-lg-12 pt-2">
+                </div>
+                <div class="col-lg-12 pt-2" id="ProductImage">
+                    <dt class="col-sm-2">
+                        <img src="/Images/@Model.Image" width="200" height="150">
+                    </dt>
+                </div>
+                <div class="col-lg-12 pt-2" id="ProductPrice">
+                    <div class="col-sm-4">
+                        <h4>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </h4>
+                    </div>
+                    <div class="col-sm-8">
+                        @Html.DisplayFor(model => model.Name)
+
+                    </div>
+                </div>
+                <div class="col-lg-12 pt-2" id="ProductPrice">
+                    <div class="col-sm-4">
+                        <h4>
+                            @Html.DisplayNameFor(model => model.Price)
+                        </h4>
+                    </div>
+                    <div class="col-sm-8">
+                        @Html.DisplayFor(model => model.Price)
+
+                    </div>
+                </div>
+                <div class="col-lg-12 pt-2" id="Creation at">
+                    <div class="col-sm-4">
+                        <h4>
+                            @Html.DisplayNameFor(model => model.CreationDate)
+                        </h4>
+                    </div>
+                    <div class="col-sm-8">
+                        @Html.DisplayFor(model => model.CreationDate)
+
+                    </div>
+                </div>
+                <div class="col-lg-12 pt-2" id="Start Date">
+                    <div class="col-sm-4">
+                        <h4>
+                            @*@Html.DisplayNameFor(model => model.StartDate)*@
+                        </h4>
+                    </div>
+                    <div class="col-sm-8">
+
+                        @*@Html.DisplayFor(model => model.StartDate)*@
+
+                    </div>
+                </div>
+                <div class="col-lg-12 pt-2" id="Duration In Days To Show It">
+                    <div class="col-sm-4">
+                        <h4>
+                            @Html.DisplayNameFor(model => model.Duration)
+                        </h4>
+                    </div>
+                    <div class="col-sm-8">
+                        @Html.DisplayFor(model => model.Duration) Day/Days
+
+                    </div>
+
+                </div>
+
+                @*@if (User.IsInRole("Admin"))*@
+                {
+
+                    <div class="col-lg-12 mt-3">
+                        <div class="row">
+                            <div class="col-lg-6 pb-1">
+                                <a asp-action="Edit" asp-route-id="@Model?.Id" class="col-2 btn btn-warning w-50">Edit</a>
+                            </div>
+                            <div class="col-lg-6">
+                                <a asp-action="Index" asp-controller="Product" class="col-2 btn btn-outline-primary w-50">Back to List</a>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+
+
+            </div>
+        </div>
+    </div>
+
+</div>

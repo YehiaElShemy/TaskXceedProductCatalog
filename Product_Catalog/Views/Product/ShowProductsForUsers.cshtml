@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Product_Catalog.Models.Product>
+
+@{
+    ViewData["Title"] = "ShowProductsForUsers";
+}
+
+<h1>ShowProductsForUsers</h1>
+
+
+<table class="table table-active">
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Create Date</th>
+            <th>Duration Days </th>
+            <th>Price</th>
+            <th>Image</th>
+        
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.CreationDate</td>
+                <td>@item.Duration</td>
+                <td>@item.Price</td>
+                <td>
+                    <img src="/Images/@item.Image" width="100" height="100">
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

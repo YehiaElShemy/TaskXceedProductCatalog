@@ -8,6 +8,7 @@ namespace Product_Catalog.Repository
         List<Category> GetCategories();
         List<GetAllProductWithCategoryNameVM> getAllProductWithCategoryNames();
         List<GetAllProductWithCategoryNameVM> GetProductsByCategoryId(int Id);
+        List<Product> ShowProductsinSpecificTime();
         string UploadImage(IFormFile image);
     }
 }
