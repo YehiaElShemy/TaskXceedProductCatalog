@@ -2193,11 +2193,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\Product_Catalog\\Product_Catalog.csproj",
+      "projectUniqueName": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\TaskXceedProductCatalog\\Product_Catalog\\Product_Catalog.csproj",
       "projectName": "Product_Catalog",
-      "projectPath": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\Product_Catalog\\Product_Catalog.csproj",
+      "projectPath": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\TaskXceedProductCatalog\\Product_Catalog\\Product_Catalog.csproj",
       "packagesPath": "C:\\Users\\yehia\\.nuget\\packages\\",
-      "outputPath": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\Product_Catalog\\obj\\",
+      "outputPath": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\TaskXceedProductCatalog\\Product_Catalog\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
