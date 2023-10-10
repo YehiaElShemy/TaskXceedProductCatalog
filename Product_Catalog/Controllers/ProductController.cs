@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Product_Catalog.Models;
 using Product_Catalog.Repository;
 using Product_Catalog.ViewModel;
+using System.Security.Claims;
 
 namespace Product_Catalog.Controllers
 {
@@ -36,15 +37,18 @@ namespace Product_Catalog.Controllers
         }
 
         [HttpPost]
-        //   [AutoValidateAntiforgeryToken]
+        [ValidateAntiForgeryToken]
         public IActionResult Create(Product newProduct)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
+                    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                    
                     string ImageName = repoProduct.UploadImage(newProduct.ImageFile);
                     newProduct.Image = ImageName;
+                    newProduct.UserId = userId;
                     repository.Add(newProduct);
                     repository.SaveChanges();
                     return RedirectToAction("Index");
@@ -64,7 +68,7 @@ namespace Product_Catalog.Controllers
             return View(repository.GetById(Id));
         }
         [HttpPost]
-        //  [ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]
         public IActionResult Edit(int Id, Product newEdit)
         {
             try

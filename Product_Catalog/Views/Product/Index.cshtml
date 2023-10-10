@@ -12,8 +12,22 @@
 <form asp-action="FilterByCategory" method="Post">
     <div class="form-group">
         <label for="categoryFilter">Filter by Category:</label>
-        <select name="Id" asp-items="listIofCategories"  class="form-control"
-        onchange="this.form.submit()">
+      @*  <select name="Id" asp-items="listIofCategories"  class="form-control"
+        onchange ="this.form.submit()">
+        </select>*@
+        <select name="Id" id="Id" class="form-control" onchange="this.form.submit()">
+            <option value="">Select Category</option> 
+            @foreach (var item in listIofCategories)
+            {
+                if (item.Selected)
+                {
+                    <option value="@item.Value">@item.Text</option>
+                }
+                else
+                {
+                    <option value="@item.Value">@item.Text</option>
+                }
+            }
         </select>
     </div>
 </form>

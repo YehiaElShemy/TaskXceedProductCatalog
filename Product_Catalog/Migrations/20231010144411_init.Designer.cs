@@ -12,8 +12,8 @@ using Product_Catalog.Models.Context;
 namespace Product_Catalog.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20231009223542_addstartday")]
-    partial class addstartday
+    [Migration("20231010144411_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

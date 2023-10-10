@@ -16,6 +16,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = E:\ITI 3 Month .Net full stack\C#\APP\ProductCatalogWebApplication\TaskXceedProductCatalog\Product_Catalog
 build_property._RazorSourceGeneratorDebug = 
 
+[E:/ITI 3 Month .Net full stack/C\#/APP/ProductCatalogWebApplication/TaskXceedProductCatalog/Product_Catalog/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ITI 3 Month .Net full stack/C\#/APP/ProductCatalogWebApplication/TaskXceedProductCatalog/Product_Catalog/Views/Account/Registration.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3RyYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/ITI 3 Month .Net full stack/C\#/APP/ProductCatalogWebApplication/TaskXceedProductCatalog/Product_Catalog/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -48,8 +56,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxfQ3JlYXRlQW5kRWRpdFBhcnRpYWxWaWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/ITI 3 Month .Net full stack/C\#/APP/ProductCatalogWebApplication/TaskXceedProductCatalog/Product_Catalog/Views/Role/AddRole.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxBZGRSb2xlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/ITI 3 Month .Net full stack/C\#/APP/ProductCatalogWebApplication/TaskXceedProductCatalog/Product_Catalog/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ITI 3 Month .Net full stack/C\#/APP/ProductCatalogWebApplication/TaskXceedProductCatalog/Product_Catalog/Views/Shared/_layoutPartialView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9sYXlvdXRQYXJ0aWFsVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ITI 3 Month .Net full stack/C\#/APP/ProductCatalogWebApplication/TaskXceedProductCatalog/Product_Catalog/Views/Shared/_MyLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NeUxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/ITI 3 Month .Net full stack/C\#/APP/ProductCatalogWebApplication/TaskXceedProductCatalog/Product_Catalog/Views/Shared/_ValidationScriptsPartial.cshtml]
