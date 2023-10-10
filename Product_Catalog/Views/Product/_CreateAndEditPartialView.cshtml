@@ -2,7 +2,7 @@
 @{
     SelectList listIofCategories = new SelectList(ViewBag.Categories, "Id", "Name");
 }
-<div class="row">
+<div class="row ">
     <div class="col-md-4">
         <form asp-action="@ViewBag.link" asp-controller="Product" method="post" enctype="multipart/form-data">
             @Html.AntiForgeryToken()
@@ -14,12 +14,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="CreationDate" class="control-label"></label>
-                <input asp-for="CreationDate" class="form-control" />
+                <input asp-for="CreationDate" class="form-control " min="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss")" />
                 <span asp-validation-for="CreationDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="StartDate" class="control-label"></label>
-                <input asp-for="StartDate" class="form-control" />
+                <label asp-for="StartDate" class="control-label "></label>
+                <input asp-for="StartDate" class="form-control " min="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss")" />
                 <span asp-validation-for="StartDate" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -37,12 +37,20 @@
                 <input type="file" asp-for="ImageFile" class="form-control" />
                 <span asp-validation-for="Image" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <select asp-for="CategoryId" asp-items="listIofCategories"></select>
+
+            <div class="form-group mt-2 ">
+                <select asp-for="CategoryId" asp-items="listIofCategories" class="form-control"></select>
             </div>
-            <div class="form-group">
-                <input type="submit" value="@ViewBag.link" class="btn btn-primary" />
+            <div class="row  mt-2  d-flex">
+                <div class="form-group mt-1 col-3">
+                    <input type="submit" value="@ViewBag.link" class="btn btn-success" />
+                </div>
+                <div class="col-6">
+                    <a asp-action="Index" asp-controller="Product" class=" btn btn-danger">Go To All Product</a>
+                </div>
             </div>
+
+
         </form>
     </div>
 </div>

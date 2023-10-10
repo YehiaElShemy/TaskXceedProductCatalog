@@ -2,6 +2,7 @@
 using Product_Catalog.Models;
 using Product_Catalog.Models.Context;
 using Product_Catalog.ViewModel;
+using System.Security.Claims;
 
 namespace Product_Catalog.Repository
 {
@@ -49,7 +50,7 @@ namespace Product_Catalog.Repository
 
         public IEnumerable<Product> GetAll()
         {
-            return db.Products.ToList();//AsQueryable();
+            return db.Products.ToList();
         }
         public void SaveChanges()
         {
@@ -58,7 +59,6 @@ namespace Product_Catalog.Repository
 
         public string UploadImage(IFormFile image)
         {
-            // string uploadsFolder = Path.Combine("wwwroot", "Images");
             string uploadsFolder = Path.Combine(webHost.WebRootPath, "Images");
             string ImageName = Guid.NewGuid().ToString() + "_" + image.FileName;
             string filePath = Path.Combine(uploadsFolder, ImageName);
@@ -75,7 +75,8 @@ namespace Product_Catalog.Repository
 
         public List<GetAllProductWithCategoryNameVM> getAllProductWithCategoryNames()
         {
-            var AllProductsWithGategoryname = db.Products.Include(p => p.Category).ToList();
+            var AllProductsWithGategoryname = db.Products.Include(p => p.Category).
+                Include(p=>p.User).ToList();
             if (AllProductsWithGategoryname != null)
             {
                 List<GetAllProductWithCategoryNameVM> productsWithCategoryNameVMs = new List<GetAllProductWithCategoryNameVM>();
@@ -86,11 +87,13 @@ namespace Product_Catalog.Repository
                         Id = product.Id,
                         Name = product.Name,
                         CreationDate = product.CreationDate,
+                        StartDate=product.StartDate,
                         Duration = product.Duration,
                         Image = product.Image,
                         Price = product.Price,
-                        CategoryName = product.Category.Name
-                    });
+                        CategoryName = product.Category.Name,
+                        UserName = product.User.UserName
+                    }) ;
                 }
                 return productsWithCategoryNameVMs;
             }

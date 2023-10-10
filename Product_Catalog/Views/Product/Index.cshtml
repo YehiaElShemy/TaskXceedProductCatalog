@@ -7,44 +7,54 @@
 
 
 <h1>AllProduct</h1>
+<div class=" container">
+    <div class=" row">
+        <div class="col-8">
+            <p>
+                <a asp-action="Create" class="btn btn-primary">Create New</a>
+            </p>
+        </div>
+        <div class="col-4 mb-3">
 
-
-<form asp-action="FilterByCategory" method="Post">
-    <div class="form-group">
-        <label for="categoryFilter">Filter by Category:</label>
-      @*  <select name="Id" asp-items="listIofCategories"  class="form-control"
-        onchange ="this.form.submit()">
-        </select>*@
-        <select name="Id" id="Id" class="form-control" onchange="this.form.submit()">
-            <option value="">Select Category</option> 
-            @foreach (var item in listIofCategories)
-            {
-                if (item.Selected)
-                {
-                    <option value="@item.Value">@item.Text</option>
-                }
-                else
-                {
-                    <option value="@item.Value">@item.Text</option>
-                }
-            }
-        </select>
+            <form asp-action="FilterByCategory" method="Post">
+                <div class="form-group">
+                    <label for="categoryFilter">Filter by Category:</label>
+                    @*  <select name="Id" asp-items="listIofCategories"  class="form-control"
+                    onchange ="this.form.submit()">
+                    </select>*@
+                    <select name="Id" id="Id" class="form-control" onchange="this.form.submit()">
+                        <option value="">Select Category</option>
+                        @foreach (var item in listIofCategories)
+                        {
+                            if (item.Selected)
+                            {
+                                <option value="@item.Value">@item.Text</option>
+                            }
+                            else
+                            {
+                                <option value="@item.Value">@item.Text</option>
+                            }
+                        }
+                    </select>
+                </div>
+            </form>
+        </div>
     </div>
-</form>
 
+</div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table table-striped">
-    <thead>
+<table class="table table-striped table-hover table-bordered  ">
+    <thead >
         <tr>
             <th>Product Name</th>
             <th>Create Date</th>
+            <th>Start Date</th>
             <th>Duration Days </th>
+            <th>Creator product </th>
             <th>Price</th>
             <th>Image</th>
             <th>Category Name</th>
+
             <th>Edit &nbsp; &nbsp; Details &nbsp; &nbsp; Delete</th>
         </tr>
     </thead>
@@ -53,16 +63,18 @@
         {
             <tr>
                 <td>@item.Name</td>
-                <td>@item.CreationDate</td>
-                <td>@item.Duration</td>
-                <td>@item.Price</td>
-                <td>
+                <td class="col-1">@item.CreationDate</td>
+                <td class="col-1">@item.StartDate</td>
+                <td class="col-1">@item.Duration</td>
+                <td class="col-1">@item.UserName</td>
+                <td class="col-1">@item.Price</td>
+                <td class="col-2"> 
                     <img src="/Images/@item.Image" width="100" height="100">
                 </td>
-                <td>@item.CategoryName</td>
-                <td>
+                <td class="col-1">@item.CategoryName</td>
+                <td class="col-3">
                     <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
-                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-warning">Details</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-secondary">Details</a>
                     <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
                 </td>
             </tr>

@@ -9,46 +9,29 @@
                 <li class="nav-item">
                     <a class="nav-link active" asp-action="Index" asp-controller="Home">Home</a>
                 </li>
-
-                @if (User.IsInRole("Admin"))
+                @if (User.Identity.IsAuthenticated)
                 {
-                <li class="nav-item">
-                    <a class="nav-link" asp-action="Index" asp-controller="Product">Product</a>
-                </li>
-             
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li class="nav-item ">
+                            <a class="nav-link active" asp-action="Index" asp-controller="Product">Admin panel</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" asp-action="AddRole" asp-controller="Role">AddRole</a>
+                        </li>
+                    }
                     <li class="nav-item">
-                        <a class="nav-link" asp-action="AddRole" asp-controller="Role">AddRole</a>
+                        <a class="nav-link active" asp-action="ShowProductsForUsers" asp-controller="Product">Products</a>
                     </li>
+                    
                 }
-                <li class="nav-item">
-                    <a class="nav-link" asp-action="ShowProductsForUsers" asp-controller="Product">AllProduct</a>
-                </li>
                
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        View More
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">Web Development</a></li>
-                        <li><a class="dropdown-item" href="#">Web Designing</a></li>
-                        <li><a class="dropdown-item" href="#">Android Development</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact Us</a>
-                </li>
+             
+               
+          
             </ul>
-            <div class="d-flex">
-                <div class="dropdown">
-                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                        Our Products
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <li><a class="dropdown-item" href="#">Product One</a></li>
-                        <li><a class="dropdown-item" href="#">Product Two</a></li>
-                        <li><a class="dropdown-item" href="#">Product Three</a></li>
-                    </ul>
-                </div>
+  
                 @if(!User.Identity.IsAuthenticated)
                 {
                     <a class="btn btn-light ms-3" asp-action="Login" asp-controller="Account">Login</a>
