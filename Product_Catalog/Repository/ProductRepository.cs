@@ -28,15 +28,15 @@ namespace Product_Catalog.Repository
         {
             db.Products.Add(newProduct);
         }
-        public void Update(int Id,Product editProduct)
+        public void Update(Product editProduct)
         {
-            var oldProduct = db.Products.AsNoTracking().FirstOrDefault(p=>p.Id==Id);
-            if (oldProduct != null)
-            {
-                db.Entry(editProduct).State = EntityState.Modified;
-                db.Products.Update(editProduct);
-            }
-
+            db.Entry(editProduct).State = EntityState.Modified;
+            db.Products.Update(editProduct);
+        }
+        //get product with no tracking
+        public Product GetProductAsNoTracking(int Id)
+        {
+            return db.Products.AsNoTracking().FirstOrDefault(p => p.Id == Id);
         }
 
         public void Delete(int Id)
@@ -57,7 +57,7 @@ namespace Product_Catalog.Repository
             db.SaveChanges();
         }
 
-        public string UploadImage(IFormFile image)
+        public string UploadImage(IFormFile image) //method to upload image in my site
         {
             string uploadsFolder = Path.Combine(webHost.WebRootPath, "Images");
             string ImageName = Guid.NewGuid().ToString() + "_" + image.FileName;
@@ -68,15 +68,15 @@ namespace Product_Catalog.Repository
             }
             return ImageName;
         }
-        public List<Category> GetCategories()
+        public List<Category> GetCategories() //method to return all Category
         {
             return db.Categories.ToList();
         }
-
+        //return all products, Categories Name, who created this product 
         public List<GetAllProductWithCategoryNameVM> getAllProductWithCategoryNames()
         {
             var AllProductsWithGategoryname = db.Products.Include(p => p.Category).
-                Include(p=>p.User).ToList();
+                Include(p => p.User).ToList();
             if (AllProductsWithGategoryname != null)
             {
                 List<GetAllProductWithCategoryNameVM> productsWithCategoryNameVMs = new List<GetAllProductWithCategoryNameVM>();
@@ -87,19 +87,20 @@ namespace Product_Catalog.Repository
                         Id = product.Id,
                         Name = product.Name,
                         CreationDate = product.CreationDate,
-                        StartDate=product.StartDate,
+                        StartDate = product.StartDate,
                         Duration = product.Duration,
                         Image = product.Image,
                         Price = product.Price,
                         CategoryName = product.Category.Name,
                         UserName = product.User.UserName
-                    }) ;
+                    });
                 }
                 return productsWithCategoryNameVMs;
             }
             return new List<GetAllProductWithCategoryNameVM>();
         }
 
+        //return all products, filter by select Category Name for admin
         public List<GetAllProductWithCategoryNameVM> GetProductsByCategoryId(int Id)
         {
             var AllProductByCateID = db.Products.Include(p => p.Category).Where(p => p.CategoryId == Id).ToList();
@@ -124,10 +125,11 @@ namespace Product_Catalog.Repository
             return new List<GetAllProductWithCategoryNameVM>();
         }
 
+        //show all product in specific time 
         public List<Product> ShowProductsinSpecificTime()
         {
             var Allproducts = GetAll();
-            if(Allproducts != null)
+            if (Allproducts != null)
             {
                 List<Product> products = new List<Product>();
                 foreach (var product in Allproducts)
@@ -141,8 +143,34 @@ namespace Product_Catalog.Repository
                 return products;
             }
             return new List<Product>();
-            
-          
+        }
+
+        //return all products, filter by select Category Name for user
+
+
+        public List<Product> GetAllProductsFillterbyCategoryIdforuser(int Id)
+        {
+            var AllProductByCateID = db.Products.Include(p => p.Category).Where(p => p.CategoryId == Id).ToList();
+            if (AllProductByCateID != null)
+            {
+                List<Product> productsWithCateIdVMs = new List<Product>();
+                foreach (var product in AllProductByCateID)
+                {
+                    DateTime EndDate = product.StartDate.AddDays(product.Duration);
+                    if (product.StartDate <= DateTime.Now && EndDate > DateTime.Now)
+                    {
+                        productsWithCateIdVMs.Add(new Product
+                        {
+                            Id = product.Id,
+                            Name = product.Name,
+                            Image = product.Image,
+                            Price = product.Price,
+                        });
+                    }
+                }
+                return AllProductByCateID;
+            }
+            return new List<Product>();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
-        <a class="navbar-brand" href="#"><img src="/images/MarkupTag-white-logo.png" alt="Logo" class="img-fluid" /></a>
+        <a class="navbar-brand" href="#"><img src="/images/Login.png" width="50" height="50" alt="Logo" class="img-fluid" /></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -39,7 +39,11 @@
                 }
                 else
                 {
-                     <a class="btn btn-light ms-3" asp-action="LogOut" asp-controller="Account">LogOut</a>
+                    <li class="nav-item text-light d-flex">
+                    <p>Welcome @User.Identity.Name</p>
+                     <a class="btn btn-light ms-3" asp-action="LogOut" asp-controller="Account"> LogOut</a>
+                    </li>
+
                 }
 
             </div>

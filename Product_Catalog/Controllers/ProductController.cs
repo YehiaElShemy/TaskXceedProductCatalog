@@ -20,14 +20,14 @@ namespace Product_Catalog.Controllers
             repository = _repository;
         }
         [AllowAnonymous]
-        public IActionResult FilterByCategory(int Id)
+        public IActionResult FilterByCategory(int Id) //filter category by id for admin
         {
             List<GetAllProductWithCategoryNameVM> SelectProduct = repoProduct.GetProductsByCategoryId(Id);
             ViewBag.Categories = repoProduct.GetCategories();
             return View("Index", SelectProduct);
         }
-        [Authorize(Roles ="Admin")]
-        public IActionResult Index()
+   
+        public IActionResult Index() //show all product with category name
         {
             ViewBag.Categories = repoProduct.GetCategories();
             return View(repoProduct.getAllProductWithCategoryNames());
@@ -48,7 +48,7 @@ namespace Product_Catalog.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);//get user id who login now
                     string ImageName = repoProduct.UploadImage(newProduct.ImageFile);
                     newProduct.Image = ImageName;
                     newProduct.UserId = userId;
@@ -78,20 +78,32 @@ namespace Product_Catalog.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                    string ImageName = repoProduct.UploadImage(newEdit.ImageFile);
-                    newEdit.Image = ImageName;
-                    newEdit.UserId = userId;
-                    repository.Update(Id, newEdit);
-                    repository.SaveChanges();
-                    return RedirectToAction("Index");
+                    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);//get user id who login now
+                    //get product with no tracking to avoid execption two Entity have same id  
+                    Product oldproduct = repoProduct.GetProductAsNoTracking(Id);  
 
-
+                    if (oldproduct != null)
+                    {
+                        if (newEdit.ImageFile == null)
+                        {
+                            newEdit.Image = oldproduct.Image;
+                        }
+                        else
+                        {
+                            string ImageName = repoProduct.UploadImage(newEdit.ImageFile);
+                            newEdit.Image = ImageName;
+                        }
+                      
+                        newEdit.UserId = userId;
+                        repository.Update(newEdit);
+                        repository.SaveChanges();
+                        return RedirectToAction("Index");
+                    }
+               
                 }
             }
             catch (Exception ex)
             {
-                //ModelState.AddModelError("", ex.Message);
                 return View("Error", new ErrorViewModel { ErrorMessage = $"Internal server error {ex.Message}" });
             }
             ViewBag.Categories = repoProduct.GetCategories();
@@ -114,7 +126,15 @@ namespace Product_Catalog.Controllers
         [AllowAnonymous]
         public IActionResult ShowProductsForUsers()
         {
+            ViewBag.Categories = repoProduct.GetCategories();
             return View(repoProduct.ShowProductsinSpecificTime());
+        }
+        [AllowAnonymous]
+        public IActionResult FilterByCategoryForUser(int Id) //filter category by id for user
+        {
+            List<Product> SelectProduct = repoProduct.GetAllProductsFillterbyCategoryIdforuser(Id);
+            ViewBag.Categories = repoProduct.GetCategories();
+            return View("ShowProductsForUsers", SelectProduct);
         }
         public bool CheckPrice(double Price)
         {

@@ -33,20 +33,20 @@ namespace Product_Catalog.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Registration(RegisterUserVM newUser)
+        public async Task<IActionResult> Registration(RegisterUserVM newUser) //action method to reggister user or admin
         {
-            ViewBag.Roles = GetAllRoles();
+            ViewBag.Roles = GetAllRoles(); //view bag to retrun all Role 
             if (ModelState.IsValid)
             {
                 IdentityUser AddUser = new IdentityUser();
                 AddUser.UserName = newUser.UserName;
                 AddUser.Email = newUser.Email;
-                IdentityResult result = await userManager.CreateAsync(AddUser, newUser.Password);
+                IdentityResult result = await userManager.CreateAsync(AddUser, newUser.Password); //create user and hash password if user not fount
                 if (result.Succeeded)
                 {
-                    await signInManager.SignInAsync(AddUser, false);
+                    await signInManager.SignInAsync(AddUser, false); //create Cookie after register 
                     if (newUser.RoleName == "Admin")
-                        await userManager.AddToRoleAsync(AddUser, newUser.RoleName);
+                        await userManager.AddToRoleAsync(AddUser, newUser.RoleName); //AddRole to Register
                     else
                         await userManager.AddToRoleAsync(AddUser, newUser.RoleName);
 
@@ -56,7 +56,7 @@ namespace Product_Catalog.Controllers
                 {
                     foreach (var item in result.Errors)
                     {
-                        ModelState.AddModelError("", item.Description);
+                        ModelState.AddModelError("", item.Description); //return exeception if not success
                     }
                     return View(newUser);
                 }
@@ -67,7 +67,7 @@ namespace Product_Catalog.Controllers
             }
         }
 
-        private List<SelectListItem> GetAllRoles()
+        private List<SelectListItem> GetAllRoles() //method return All Roles 
         {
             var AllRoles = roleManager.Roles.Select(r => new SelectListItem
             {
@@ -92,9 +92,10 @@ namespace Product_Catalog.Controllers
         {
             if (ModelState.IsValid)
             {
-                IdentityUser User = await userManager.FindByNameAsync(userLogin.UserName); //FindByEmailAsync();
+                IdentityUser User = await userManager.FindByNameAsync(userLogin.UserName); //Chech if user Exist or not
                 if (User != null)
                 {
+                    //Create cookies
                     Microsoft.AspNetCore.Identity.SignInResult result =
                         await signInManager.PasswordSignInAsync(User, userLogin.Password, userLogin.IsPersisite, false); //create cookie
                     if (result.Succeeded)
@@ -114,8 +115,7 @@ namespace Product_Catalog.Controllers
 
         public async Task<IActionResult> LogOut()
         {
-            //var user = userManager.FindByIdAsync(User.Identity.Name);
-            await signInManager.SignOutAsync();
+            await signInManager.SignOutAsync(); //Killed Cookie and logout
             return RedirectToAction("Login");
 
         }

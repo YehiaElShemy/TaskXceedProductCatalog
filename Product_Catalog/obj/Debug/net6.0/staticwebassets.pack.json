@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\Images\\10d00d84-1096-4ab6-a7f0-9160bf0b4103_WhatsApp Image 2023-08-13 at 2.50.38 AM.jpeg"
     },
     {
+      "Id": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\TaskXceedProductCatalog\\Product_Catalog\\wwwroot\\Images\\2f33aa05-7eee-4721-85b9-106a922ad142_Xamai.jpg",
+      "PackagePath": "staticwebassets\\Images\\2f33aa05-7eee-4721-85b9-106a922ad142_Xamai.jpg"
+    },
+    {
       "Id": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\TaskXceedProductCatalog\\Product_Catalog\\wwwroot\\Images\\30f41773-78f3-4fb2-a49f-552b6f5e8990_Capture2.PNG",
       "PackagePath": "staticwebassets\\Images\\30f41773-78f3-4fb2-a49f-552b6f5e8990_Capture2.PNG"
     },
@@ -21,8 +25,16 @@
       "PackagePath": "staticwebassets\\Images\\34307ef7-5460-4219-9d7e-919ef12687c7_Screenshot (3).png"
     },
     {
+      "Id": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\TaskXceedProductCatalog\\Product_Catalog\\wwwroot\\Images\\3c0705ea-6c00-486a-be0b-443f25f1ce13_Iphone.jpg",
+      "PackagePath": "staticwebassets\\Images\\3c0705ea-6c00-486a-be0b-443f25f1ce13_Iphone.jpg"
+    },
+    {
       "Id": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\TaskXceedProductCatalog\\Product_Catalog\\wwwroot\\Images\\3f76d46a-f205-4834-8cb7-63216df0bbe2_Screenshot (14).png",
       "PackagePath": "staticwebassets\\Images\\3f76d46a-f205-4834-8cb7-63216df0bbe2_Screenshot (14).png"
+    },
+    {
+      "Id": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\TaskXceedProductCatalog\\Product_Catalog\\wwwroot\\Images\\452e8e96-6087-4d69-b26f-3986f0cef40c_Hp.jpg",
+      "PackagePath": "staticwebassets\\Images\\452e8e96-6087-4d69-b26f-3986f0cef40c_Hp.jpg"
     },
     {
       "Id": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\TaskXceedProductCatalog\\Product_Catalog\\wwwroot\\Images\\4fb80622-ef18-439d-9a29-5b9b1201ac03_Screenshot (22).png",
@@ -31,6 +43,10 @@
     {
       "Id": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\TaskXceedProductCatalog\\Product_Catalog\\wwwroot\\Images\\5a2ea840-f5f7-4d57-92f9-da85bdb45dcf_2023-02-20.png",
       "PackagePath": "staticwebassets\\Images\\5a2ea840-f5f7-4d57-92f9-da85bdb45dcf_2023-02-20.png"
+    },
+    {
+      "Id": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\TaskXceedProductCatalog\\Product_Catalog\\wwwroot\\Images\\5e4ba797-9eab-4fbb-a49b-76e3e0c93de0_Huamie.jpg",
+      "PackagePath": "staticwebassets\\Images\\5e4ba797-9eab-4fbb-a49b-76e3e0c93de0_Huamie.jpg"
     },
     {
       "Id": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\TaskXceedProductCatalog\\Product_Catalog\\wwwroot\\Images\\5fcaf65e-99b3-47db-84de-10cb1b8a5370_Screenshot (15).png",
@@ -49,12 +65,20 @@
       "PackagePath": "staticwebassets\\Images\\779b6e6d-99d4-4330-bbae-dbaf36a5053a_WhatsApp Image 2023-08-13 at 2.50.38 AM.jpeg"
     },
     {
+      "Id": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\TaskXceedProductCatalog\\Product_Catalog\\wwwroot\\Images\\Login.png",
+      "PackagePath": "staticwebassets\\Images\\Login.png"
+    },
+    {
       "Id": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\TaskXceedProductCatalog\\Product_Catalog\\wwwroot\\Images\\a0b36f84-3dac-4551-a012-0789ffa964cf_WhatsApp Image 2023-08-13 at 2.46.15 AM.jpeg",
       "PackagePath": "staticwebassets\\Images\\a0b36f84-3dac-4551-a012-0789ffa964cf_WhatsApp Image 2023-08-13 at 2.46.15 AM.jpeg"
     },
     {
       "Id": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\TaskXceedProductCatalog\\Product_Catalog\\wwwroot\\Images\\accaa8f8-4078-4cce-af1f-283f11ab14f2_WhatsApp Image 2023-08-13 at 2.50.38 AM.jpeg",
       "PackagePath": "staticwebassets\\Images\\accaa8f8-4078-4cce-af1f-283f11ab14f2_WhatsApp Image 2023-08-13 at 2.50.38 AM.jpeg"
+    },
+    {
+      "Id": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\TaskXceedProductCatalog\\Product_Catalog\\wwwroot\\Images\\b02680ae-2b74-410f-a743-ababd5560031_hundia.jpg",
+      "PackagePath": "staticwebassets\\Images\\b02680ae-2b74-410f-a743-ababd5560031_hundia.jpg"
     },
     {
       "Id": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\TaskXceedProductCatalog\\Product_Catalog\\wwwroot\\Images\\b07facfb-a0e0-4ec5-a2b1-60bb051c24e2_Screenshot (10).png",
@@ -67,6 +91,10 @@
     {
       "Id": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\TaskXceedProductCatalog\\Product_Catalog\\wwwroot\\Images\\b521c973-2bc9-41b5-9187-f4e4d5254060_Screenshot (19).png",
       "PackagePath": "staticwebassets\\Images\\b521c973-2bc9-41b5-9187-f4e4d5254060_Screenshot (19).png"
+    },
+    {
+      "Id": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\TaskXceedProductCatalog\\Product_Catalog\\wwwroot\\Images\\b7f9e14f-5e8b-4783-843d-b81797ebd1e1_hundia.jpg",
+      "PackagePath": "staticwebassets\\Images\\b7f9e14f-5e8b-4783-843d-b81797ebd1e1_hundia.jpg"
     },
     {
       "Id": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\TaskXceedProductCatalog\\Product_Catalog\\wwwroot\\Images\\be49f20d-0204-4a25-b711-a3ffd83cfb47_Capture.PNG",
@@ -91,6 +119,14 @@
     {
       "Id": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\TaskXceedProductCatalog\\Product_Catalog\\wwwroot\\Images\\efc3a936-3aea-428b-8eaa-ba2a741dcc54_Screenshot (12).png",
       "PackagePath": "staticwebassets\\Images\\efc3a936-3aea-428b-8eaa-ba2a741dcc54_Screenshot (12).png"
+    },
+    {
+      "Id": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\TaskXceedProductCatalog\\Product_Catalog\\wwwroot\\Images\\f07961c4-2ae8-45fd-acf7-ab650a6b96bb_Dell G15 5511.jpg",
+      "PackagePath": "staticwebassets\\Images\\f07961c4-2ae8-45fd-acf7-ab650a6b96bb_Dell G15 5511.jpg"
+    },
+    {
+      "Id": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\TaskXceedProductCatalog\\Product_Catalog\\wwwroot\\Images\\ff547d01-bed6-4c0e-a9d8-c4017595bc19_Hundia2.jpg",
+      "PackagePath": "staticwebassets\\Images\\ff547d01-bed6-4c0e-a9d8-c4017595bc19_Hundia2.jpg"
     },
     {
       "Id": "E:\\ITI 3 Month .Net full stack\\C#\\APP\\ProductCatalogWebApplication\\TaskXceedProductCatalog\\Product_Catalog\\wwwroot\\css\\site.css",

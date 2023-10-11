@@ -17,9 +17,7 @@ namespace Product_Catalog
             builder.Services.AddDbContext<Context>(option =>
                 option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
                 );
-            //builder.Services.AddAuthorization(options =>
-            //options.DefaultPolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build());
-
+           
             builder.Services.AddScoped<IRepository,ProductRepository>();
             builder.Services.AddScoped<IProduct,ProductRepository>();
             builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<Context>();

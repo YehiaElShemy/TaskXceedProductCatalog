@@ -8,7 +8,7 @@ namespace Product_Catalog.Repository
         Product GetById(int Id);
         Product GetByName(string name);
         void Add(Product newProduct);
-        void Update(int Id,Product editProduct);
+        void Update(Product editProduct);
         void Delete(int Id);
         void SaveChanges();
         

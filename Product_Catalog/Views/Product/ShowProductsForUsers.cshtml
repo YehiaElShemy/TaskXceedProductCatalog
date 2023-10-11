@@ -1,17 +1,50 @@
-﻿@model IEnumerable<Product_Catalog.Models.Product>
+﻿@model IEnumerable<Product>
 
 @{
     ViewData["Title"] = "ShowProductsForUsers";
+    SelectList listIofCategories = new SelectList(ViewBag.Categories, "Id", "Name");
 }
 
-<h1>ShowProductsForUsers</h1>
+
+<div class=" container">
+    <div class=" row mt-5">
+        <div class="col-8">
+
+            <h3>ShowProductsForUsers</h3>
+        </div>
+        <div class="col-4 mb-3">
+
+            <form asp-action="FilterByCategoryForUser" method="Post">
+                <div class="form-group">
+                    <label for="categoryFilter">Filter by Category:</label>
+                    <select name="Id" id="Id" class="form-control" onchange="this.form.submit()">
+                        <option value="">Select Category</option>
+                        @foreach (var item in listIofCategories)
+                        {
+                            if (item.Selected)
+                            {
+                                <option value="@item.Value">@item.Text</option>
+                            }
+                            else
+                            {
+                                <option value="@item.Value">@item.Text</option>
+                            }
+                        }
+                    </select>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
 <div class="container">
     <div class="row">
         @foreach (var item in Model)
         {
 
             <div class="card col-3 m-1 mt-5" style="width: 16rem;">
-                <img src="/Images/@item.Image" class="card-img-top" alt="...">
+                <img src="/Images/@item.Image" class="card-img-top" width="200" height="200" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">@item.Name</h5>
                     <a class="btn btn-secondary" asp-action="Details" asp-route-id="@item.Id">Details</a>
